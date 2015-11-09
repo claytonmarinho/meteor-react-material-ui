@@ -7,7 +7,7 @@ LoginLayout = React.createClass({
     return <div>
       <Card>
         <CardText>
-          <h1>ClinicSpot</h1>
+          <h1 class="center">ClinicSpot</h1>
 
           <p>A simple, transparent and accountable messaging tool for medical professionals</p>
 

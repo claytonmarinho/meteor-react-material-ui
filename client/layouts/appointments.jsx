@@ -7,26 +7,19 @@ Appointments = React.createClass({
     this.refs.leftNav.toggle();
   },
   render() {
+    var styles = {
+      paddingTop: '200px', textAlign:'center'
+    }
+
     var menuItems = [
-      { route: 'get-started', text: 'Get Started' },
-      { route: 'customization', text: 'Customization' },
-      { route: 'components', text: 'Components' },
-      { type: MenuItem.Types.SUBHEADER, text: 'Resources' },
-      {
-         type: MenuItem.Types.LINK,
-         payload: 'https://github.com/callemall/material-ui',
-         text: 'GitHub'
-      },
-      {
-         text: 'Disabled',
-         disabled: true
-      },
-      {
-         type: MenuItem.Types.LINK,
-         payload: 'https://www.google.com',
-         text: 'Disabled Link',
-         disabled: true
-      },
+      { route: '/appointment/today', text: 'Today' },
+      { route: '/appointment/next-7-days', text: 'Next 7 days' },
+      { route: '/appointment/next-14-days', text: 'Next 14 days' },
+      { route: '/appointment/next-month', text: 'Next month' },
+      { type: MenuItem.Types.SUBHEADER, text: '' },
+      { route: '/appointment/all', text: 'All' },
+      { route: '/appointment/starred', text: 'Starred' },
+      { route: '/appointment/archived', text: 'Archived' },
     ];
 
     return <div>

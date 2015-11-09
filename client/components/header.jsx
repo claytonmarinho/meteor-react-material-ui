@@ -3,8 +3,8 @@ var { AppBar, Tabs, Tab } = MUI;
 Header = React.createClass({
   render() {
     var myTabs = (
-      <Tabs onChange={_handleTabs} >
-          <Tab label="Dashboard" value="dashboard" />
+      <Tabs  onChange={_handleTabs} >
+          <Tab label="Dashboard" value="dashboard"  />
           <Tab label="Appointments" value="appointments"  />
           <Tab label="Patients" value="patients"  />
           <Tab label="Handover lists" value="handover-lists"  />
@@ -13,7 +13,9 @@ Header = React.createClass({
           <Tab label="Encounters" value="encounters"  />
       </Tabs>
     );
+
     return (
+
       <AppBar
         title="ClinicSpot"
         showMenuIconButton={false}
