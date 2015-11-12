@@ -7,10 +7,6 @@ Appointments = React.createClass({
     this.refs.leftNav.toggle();
   },
   render() {
-    var styles = {
-      paddingTop: '200px', textAlign:'center'
-    }
-
     var menuItems = [
       { route: '/appointment/today', text: 'Today' },
       { route: '/appointment/next-7-days', text: 'Next 7 days' },

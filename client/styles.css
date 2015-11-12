@@ -6,3 +6,22 @@ html, body {
 .menu-item-top {
   background-color:red;
 }
+
+.reset {
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.flex-cards ul {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    flex-flow:start;
+    align-content:flex-start;
+    padding:0;
+}
+
+.card {
+  margin:auto;
+  margin:1em;
+}
