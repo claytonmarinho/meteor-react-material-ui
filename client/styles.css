@@ -17,11 +17,49 @@ html, body {
     flex-direction:row;
     flex-wrap:wrap;
     flex-flow:start;
-    align-content:flex-start;
+    justify-content:center;
+    align-items: flex-start;
     padding:0;
 }
 
-.card {
-  margin:auto;
+.newCard .newCardClick {
+  display: block;
+}
+
+.newCard .newCardFields {
+  display: none;
+}
+
+.newCard.expanded .newCardClick {
+  display: none;
+}
+
+.newCard.expanded .newCardFields {
+  display: block;
+}
+
+/*helpers*/
+
+.margin-1em {
   margin:1em;
+}
+
+.m-top-1em {
+  margin-top:1em;
+}
+
+.margin-auto {
+  margin:auto;
+}
+
+.m-bottom-1em {
+  margin-bottom:1em;
+}
+
+.hide {
+  display:none;
+}
+
+.show {
+  display:block;
 }

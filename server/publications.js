@@ -1,3 +1,3 @@
 Meteor.publish('Lists', () => {
-  return Lists.find({});
+  return Lists.find({},{sort: {createDate: -1}});
 });

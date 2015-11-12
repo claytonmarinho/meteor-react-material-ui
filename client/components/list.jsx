@@ -1,10 +1,18 @@
+// Listing Cards
+
 var { Avatar, Card, CardTitle, CardHeader, CardMedia, CardActions, FlatButton, CardText } = MUI;
 
 List = React.createClass({
+
+  hideAddCard() {
+    $('.newCard').removeClass('expanded');
+  },
+
   render() {
     return (
-        <Card className="card">
-          <CardTitle title={this.props.title} subtitle="Subtitle"/>
+
+        <Card className="card margin-1em" onMouseOver={this.hideAddCard}>
+          <CardTitle title={this.props.title} subtitle="lorem-ipsum"/>
 
           <CardHeader
             title="Pacient 1"
@@ -12,16 +20,13 @@ List = React.createClass({
             avatar="http://lorempixel.com/100/100/nature/"/>
 
           <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            {this.props.description}
           </CardText>
           <CardActions>
-            <FlatButton label="Action1"/>
-            <FlatButton label="Action2"/>
+            <FlatButton label="Action"/>
           </CardActions>
         </Card>
+
     )
   },
 });
