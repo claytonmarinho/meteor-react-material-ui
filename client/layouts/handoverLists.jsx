@@ -1,5 +1,5 @@
 var {
-    AppBar, AppCanvas, GridList, LeftNav, MenuItem, RefreshIndicator
+    AppBar, AppCanvas, GridList, LeftNav, MenuItem, RefreshIndicator, IconButton, FontIcon, FloatingActionButton, ToggleStar, Dialog,
     } = MUI;
 
 HandoverLists = React.createClass({
@@ -8,29 +8,22 @@ HandoverLists = React.createClass({
     const handle = Meteor.subscribe('Lists');
     const data = {};
     if(handle.ready()) {
-      data.lists = Lists.find().fetch();
+      data.lists = Lists.find({}).fetch();
     }
 
     return data;
   },
 
-  getMoment(date){
-    return 'opa';
-  },
-
   getList() {
-    return <ul>
-
-
-      {this.data.lists.map(task => {
-        const path = FlowRouter.path('/handover-lists/list/', {_id: task._id})
-        return <List key={task._id}
-                     title={task.title}
-                     description={task.description}
-                     createdDate={this.getMoment}
-                     > </List>
+    return <div>
+      {this.data.lists.map(card => {
+        const path = FlowRouter.path('/handover-lists/list/', {_id: card._id})
+        return <List key={card._id}
+                     title={card.title}
+                     description={card.description} >
+                </List>
       })}
-    </ul>;
+      </div>
   },
 
   _toggleNav: function(){
@@ -49,24 +42,51 @@ HandoverLists = React.createClass({
       { route: '/handover-lists/archived', text: 'Archived' }
     ];
 
+    let standardActions = [
+      { text: 'Done' },
+    ];
+
     return <div>
-        <AppBar
-          title="Handover Lists" onLeftIconButtonTouchTap={this._toggleNav} ></AppBar>
+        <AppBar title="Handover Lists" onLeftIconButtonTouchTap={this._toggleNav} ></AppBar>
 
         <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
 
+        <Dialog
+          autoDetectWindowHeight={true}
+          autoScrollBodyContent={true}
+          onRequestClose={this._closedNewCard}
+          actions={standardActions}
+          ref="editCard">
+          <CardEdit />
+        </Dialog>
+
         <div className="wrap container-fluid m-top-1em">
-          <div className="container">
-            <NewCard className="margin-1em" />
+
+          <div className="row end-xs float-buttons">
+              <div className="col-xs-1">
+                  <div className="box">
+                    <FloatingActionButton className="float-default-top" onTouchTap={this._openAddCard}  >
+                      <i className="material-icons">add</i>
+                    </FloatingActionButton>
+                  </div>
+              </div>
           </div>
-          <div clasName="row">
-            <div className="flex-cards" >
+
+
+          <div className="row">
+            <div className="flex-cards">
               {(this.data.lists)? this.getList() : <RefreshIndicator className="loading" size={40} left={80} top={5} status="loading" /> }
             </div>
           </div>
         </div>
-
       </div>;
+  },
 
-  }
+  _openAddCard() {
+   this.refs.editCard.show();
+ },
+
+  _closedAddCard() {
+   alert('save');
+  },
 });
