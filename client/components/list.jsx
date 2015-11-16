@@ -10,7 +10,6 @@ List = React.createClass({
 
   render() {
     return (
-
         <Card className="card margin-1em" onMouseOver={this.hideAddCard}>
           <CardTitle title={this.props.title} subtitle="lorem-ipsum"/>
 
@@ -26,7 +25,6 @@ List = React.createClass({
             <FlatButton label="Action"/>
           </CardActions>
         </Card>
-
     )
   },
 });

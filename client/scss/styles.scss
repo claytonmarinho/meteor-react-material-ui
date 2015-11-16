@@ -12,7 +12,7 @@ html, body {
   padding:0 !important;
 }
 
-.flex-cards ul {
+.flex-cards {
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -22,6 +22,7 @@ html, body {
     padding:0;
 }
 
+<<<<<<< HEAD:client/scss/styles.scss
 .newCard {
   .newCardClick {
     display: block;
@@ -39,8 +40,19 @@ html, body {
      display: block;
    }
   }
+=======
+
+.float-default-top {
+  /*position: absolute !important;
+  float: right;
+  right: 30px;
+  margin-top: -60px;*/
 }
 
+.float-buttons {
+  margin-top: -45px;
+>>>>>>> 39986b5da5dc8424f6e04850c5575460b23a8da8:client/styles.css
+}
 /*helpers*/
 
 .margin-1em {
