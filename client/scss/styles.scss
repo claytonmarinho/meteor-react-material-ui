@@ -1,3 +1,7 @@
+// styles.scss
+
+@import 'helpers';
+
 html, body {
   padding:0;
   margin:0;
@@ -22,7 +26,6 @@ html, body {
     padding:0;
 }
 
-<<<<<<< HEAD:client/scss/styles.scss
 .newCard {
   .newCardClick {
     display: block;
@@ -40,7 +43,7 @@ html, body {
      display: block;
    }
   }
-=======
+}
 
 .float-default-top {
   /*position: absolute !important;
@@ -51,30 +54,4 @@ html, body {
 
 .float-buttons {
   margin-top: -45px;
->>>>>>> 39986b5da5dc8424f6e04850c5575460b23a8da8:client/styles.css
-}
-/*helpers*/
-
-.margin-1em {
-  margin:1em;
-}
-
-.m-top-1em {
-  margin-top:1em;
-}
-
-.margin-auto {
-  margin:auto;
-}
-
-.m-bottom-1em {
-  margin-bottom:1em;
-}
-
-.hide {
-  display:none;
-}
-
-.show {
-  display:block;
 }
