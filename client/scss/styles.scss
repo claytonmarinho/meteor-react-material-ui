@@ -22,20 +22,23 @@ html, body {
     padding:0;
 }
 
-.newCard .newCardClick {
-  display: block;
-}
+.newCard {
+  .newCardClick {
+    display: block;
+  }
 
-.newCard .newCardFields {
-  display: none;
-}
+  .newCardFields {
+    display: none;
+  }
 
-.newCard.expanded .newCardClick {
-  display: none;
-}
-
-.newCard.expanded .newCardFields {
-  display: block;
+  &.expanded {
+    .newCardClick {
+     display: none;
+   }
+   .newCardFields {
+     display: block;
+   }
+  }
 }
 
 /*helpers*/
