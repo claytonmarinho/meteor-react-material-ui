@@ -26,23 +26,8 @@ html, body {
     padding:0;
 }
 
-.newCard {
-  .newCardClick {
-    display: block;
-  }
-
-  .newCardFields {
-    display: none;
-  }
-
-  &.expanded {
-    .newCardClick {
-     display: none;
-   }
-   .newCardFields {
-     display: block;
-   }
-  }
+.card-content {
+  padding:0 1em 1em 1em;
 }
 
 .float-default-top {

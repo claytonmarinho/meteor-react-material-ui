@@ -74,6 +74,17 @@ FlowRouter.route('/handover-lists', {
   }
 });
 
+  FlowRouter.route('/handover-lists/add', {
+    action() {
+      name: "add-list",
+      ReactLayout.render(appLayout, {
+        header: <Header />,
+        content: <HandoverLists add="true" />,
+        footer: <Footer />
+      });
+    }
+  });
+
 FlowRouter.route('/patients', {
   action() {
     name: "patients",

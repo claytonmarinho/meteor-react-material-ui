@@ -1,5 +1,5 @@
 var {
-    Styles,
+    Styles, AppCanvas
     } = MUI;
 var { ThemeManager, LightRawTheme } = Styles;
 
@@ -16,11 +16,11 @@ appLayout = React.createClass({
   },
   render() {
     return (
-      <div>
+      <AppCanvas>
         {this.props.header}
         {this.props.content}
         {this.props.footer}
-      </div>
+      </AppCanvas>
     );
   }
 });

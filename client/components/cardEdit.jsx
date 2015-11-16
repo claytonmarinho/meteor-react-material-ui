@@ -1,5 +1,6 @@
 var {   RaisedButton,
         CardText,
+        Card,
         TextField,
         IconButton,
         CardTitle,
@@ -7,7 +8,9 @@ var {   RaisedButton,
         DatePicker,
         SelectField,
         DropDownMenu,
-        Checkbox } = MUI;
+        Checkbox,
+        ListDivider,
+        Paper } = MUI;
 
 var Colors = MUI.Styles.Colors;
 
@@ -50,34 +53,31 @@ CardEdit = React.createClass({
 
     return (
 
-      <div className="row">
-
-          <div className="col-xs-12">
-            <TextField className="title" floatingLabelText="title" hintText="Title" multiLine={true} /><br/>
-              <TextField className="description" floatingLabelText="Description" hintText="Description" multiLine={true} />
-          </div>
-
-
-          <div className="col-xs-12 m-top-1em">
-            <p>Assignees</p>
+      <Card initiallyExpanded={true} className="m-top-3em">
+        <CardTitle title="New list" subtitle="First, type the title and description."/>
+        <div className="card-content">
+          <TextField className="title block" floatingLabelText="title" hintText="Title" multiLine={true} /><br/>
+          <TextField className="description block" floatingLabelText="Description" hintText="Description" multiLine={true} />
+        </div>
+        <ListDivider/>
+        <CardTitle title="Assignees" subtitle="Check at least one assignee."/>
+        <div className="card-content">
             <Avatar size={30}>A</Avatar>  <small>Assignee 1</small>
             <Avatar size={30} color={Colors.deepOrange300} backgroundColor={Colors.purple500}>B</Avatar> <small>Assignee 2</small>
-          </div>
-
-
-          <div className="col-xs-12 m-top-1em">
-            <p>Subject</p>
-            <Avatar size={30}>A</Avatar> <small>Subject 1</small>
-            <Avatar size={30} color={Colors.deepOrange300} backgroundColor={Colors.purple500}>B</Avatar> <small>Subject 2</small>
-          </div>
-
-
-          <div className="row m-top-1em">
-            <DatePicker
-              floatingLabelText="Date due"
-              hintText="Date due"
-              mode="landscape"
-              />
+        </div>
+        <ListDivider/>
+        <div className="card-content">
+          <p>Subject</p>
+          <Avatar size={30}>A</Avatar> <small>Subject 1</small>
+          <Avatar size={30} color={Colors.deepOrange300} backgroundColor={Colors.purple500}>B</Avatar> <small>Subject 2</small>
+        </div>
+        <ListDivider/>
+        <div className="card-content">
+          <DatePicker
+            floatingLabelText="Date due"
+            hintText="Date due"
+            mode="landscape"
+            />
             <SelectField
               floatingLabelText="Priority"
               valueMember="payload"
@@ -90,24 +90,21 @@ CardEdit = React.createClass({
               displayMember="text"
               menuItems={priorities} />
           </div>
-
-
-          <div className="col-xs-12 m-top-1em">
+          <ListDivider/>
+          <div className="card-content">
             <p>Create By</p>
             <Avatar size={30}>A</Avatar> <small>Admin 1</small>
           </div>
-
-
-
-          <SelectField
-            floatingLabelText="Privacity"
-            valueMember="payload"
-            displayMember="text"
-            menuItems={privacity} />
-
-
-
-          <div className="col-xs-12 m-top-1em">
+          <ListDivider/>
+          <div className="card-content">
+            <SelectField
+              floatingLabelText="Privacity"
+              valueMember="payload"
+              displayMember="text"
+              menuItems={privacity} />
+          </div>
+          <ListDivider/>
+          <div className="card-content">
             <p>Tasks</p>
               <Checkbox
                 name="checkboxName1"
@@ -127,14 +124,11 @@ CardEdit = React.createClass({
                 value="checkboxValue2"
                 label="Task2"/>
           </div>
-
-
-          <div className="col-xs-12 m-top-1em">
+          <ListDivider/>
+          <div className="card-content">
             <p>Comments</p>
           </div>
-        </div>
-
-
+        </Card>
     )
   },
 });
